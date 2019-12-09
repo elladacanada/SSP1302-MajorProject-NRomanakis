@@ -14,8 +14,8 @@ if( isset($_SESSION["user_id"]) && ($_SESSION["role"] == 1)):
     if(isset ($_POST["action"]) && $_POST["action"] == "add_item"):
         $price = $_POST["price"];
         $brand_id = $_POST["brand"];
-        $description = htmlspecialchars($_POST["description"], ENT_COMPAT);
-        $model_name = htmlspecialchars($_POST["model_name"], ENT_COMPAT);
+        $description = htmlspecialchars($_POST["description"], ENT_QUOTES);
+        $model_name = htmlspecialchars($_POST["model_name"], ENT_QUOTES);
 
         //if profile pic is set and there are no errors
         if( isset($_FILES["watch_pic"]) && $_FILES["watch_pic"]["error"] == 0){

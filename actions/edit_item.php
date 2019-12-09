@@ -12,7 +12,7 @@ if( isset($_SESSION["user_id"]) && ($_SESSION["role"] == 1)){
             
             $price = $_POST["price"];
             $brand_id = $_POST["brand"];
-            $description = htmlspecialchars($_POST["description"], ENT_COMPAT);
+            $description = htmlspecialchars($_POST["description"], ENT_QUOTES);
             $model_name = $_POST["model_name"];
             $watch_pic_id = 'NULL';
 
