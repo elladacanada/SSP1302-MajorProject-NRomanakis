@@ -14,7 +14,7 @@ require_once("header.php");
         </div>
         <div class="row">
             <div class="col-md-6">
-                <a href="/store.php" class="btn btn-primary">Shop Now</a>
+                <a href="/store.php" class="btn btn-primary text-white">Shop Now</a>
             </div>
         </div>
     </div>

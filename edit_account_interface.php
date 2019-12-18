@@ -95,7 +95,7 @@ if($user_request = mysqli_query($conn, $user_query)) :
                     </div>
                     <div class="col text-right">
                         <button type="submit" name="action" class="btn btn-text text-danger" value="delete">Delete Account</button>
-                        <button type="submit" tabindex="3" name="action" class="btn btn-primary" value="update">Update Account</button>
+                        <button type="submit" tabindex="3" name="action" class="btn btn-primary text-white" value="update">Update Account</button>
                     </div>
                 <?php
                     endif;

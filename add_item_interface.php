@@ -73,7 +73,7 @@ if( !isset($_SESSION["user_id"]) && ($_SESSION["role"] != 1)){
                 <div class="col-md-12">
                     <div class="form-row form-group mt-3">
                         <div class="ml-auto">
-                            <button type="submit" tabindex="3" name="action" class="btn btn-primary" value="add_item">Add New Item</button>
+                            <button type="submit" tabindex="3" name="action" class="btn btn-primary text-white" value="add_item">Add New Item</button>
                         </div>
                     </div>
                 </div>

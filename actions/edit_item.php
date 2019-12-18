@@ -2,6 +2,7 @@
 require_once($_SERVER["DOCUMENT_ROOT"] . "/conn.php");
 
 $errors = [];
+$success = [];
 // print_r($_POST);
 
 if( isset($_SESSION["user_id"]) && ($_SESSION["role"] == 1)){
@@ -79,10 +80,14 @@ if( isset($_SESSION["user_id"]) && ($_SESSION["role"] == 1)){
                 // echo $update_query;
                 // exit;
                 if( mysqli_query($conn, $update_query) ){
-                    header("Location: " . strtok($_SERVER["HTTP_REFERER"], "?") . "?watch_id=" . $watch_id . "&success=User+Updated");
+                    $success[] = "Item Updated Successfully!";
+                    $query = http_build_query( array("success" => $success) );
+                    header("Location: " . strtok($_SERVER["HTTP_REFERER"], "?") . "?watch_id=" . $watch_id . "&" . $query);
                 } else{
+                    $errors[] = "Something Went Wrong";
                     $errors[] = mysqli_error($conn);
                 }
+                
             }
     
 

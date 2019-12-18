@@ -2,6 +2,9 @@
 
 require_once("header.php");
 
+$errors = [];
+$success = [];
+
 $watch_id = $_GET["watch_id"];
 
 $watch_query = " SELECT watch.*, images.url AS watch_pic

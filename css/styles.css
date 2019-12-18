@@ -10681,6 +10681,10 @@ footer ul li {
   font-size: 1.25rem;
 }
 
+#storePage #mobileFilterButton {
+  display: none;
+}
+
 #storeCards h3, #storeCards .price {
   font-weight: bold;
 }
@@ -10761,5 +10765,24 @@ footer ul li {
 
 #itemPage a:hover {
   cursor: pointer !important;
+}
+
+@media all and (max-width: 768px) {
+  #storePage #filterTitle {
+    display: none !important;
+  }
+  #storePage #mobileFilterButton {
+    display: block;
+  }
+  #storePage #filterRow {
+    background: lightgray;
+    padding: 20px;
+    display: none;
+  }
+  #storePage .show {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

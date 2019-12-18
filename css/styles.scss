@@ -5,6 +5,7 @@
 
 
 $primary: #E5AC2B;
+
 $light: #f4f4f4;
 $dark: #2B3430;
 
@@ -145,6 +146,11 @@ footer {
         font-size: 1.25rem;
     }
 
+    #mobileFilterButton{
+        display: none;
+    }
+
+   
     
 }
 #storeCards {
@@ -252,3 +258,28 @@ footer {
 
 
 // ITEM PAGE END
+
+@media all and (max-width: 768px ){
+    #storePage{
+
+        #filterTitle{
+            display: none!important;
+        }
+    
+        #mobileFilterButton {
+            display: block;
+        }
+
+        #filterRow{
+            background: lightgray;
+            padding: 20px;    
+            display: none;
+        }
+
+        .show {
+            display: flex!important;
+            
+        }
+    }
+
+}
