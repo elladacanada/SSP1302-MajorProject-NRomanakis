@@ -33,9 +33,9 @@ if( isset($_GET["watch_id"])){
                             <h3><?php echo $watch_row["brand_name"];?></h3>
                             <h1><?php echo $watch_row["model_name"];?></h1>
                             <span class="price"><?php echo "$" . $watch_row["price"];?></span> <br>
-                            <button class="btn btn-primary text-white mt-2">Add To Cart</button> <br>
-                            <a class="mt-2" href="#"><i class="far fa-heart"></i> Add To Wishlist</a> <br>
-                            <a class="mt-2" href="#"><i class="fas fa-share-alt"></i> Share Item</a> 
+                            <button disabled class="btn btn-primary text-white mt-2">Add To Cart</button> <br>
+                            <a class="mt-2" href="/sorry.php"><i class="far fa-heart"></i> Add To Wishlist</a> <br>
+                            <a class="mt-2" href="/sorry.php"><i class="fas fa-share-alt"></i> Share Item</a> 
                         </div>
 
                     </div>
@@ -82,7 +82,7 @@ if( isset($_GET["watch_id"])){
                             <div class="input-group outline-dark">
                                 <input class="form-control bg-light" type="search" placeholder="Enter Your Email Address Here" aria-label="Search">
                                 <div class="input-group-append">
-                                    <button class=" btn btn-warning text-white" type="submit">Search</button>
+                                    <button class=" btn btn-warning text-white" type="submit" disabled>Sign Up</button>
                                 </div>
                             </div>
                         </form>

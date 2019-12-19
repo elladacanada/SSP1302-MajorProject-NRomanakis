@@ -32,7 +32,7 @@ require_once("header.php");
                 <div class="input-group outline-dark">
                     <input class="form-control bg-light" type="search" placeholder="Enter Your Email Address Here" aria-label="Search">
                     <div class="input-group-append">
-                        <button class=" btn btn-warning text-white" type="submit">Search</button>
+                        <button class=" btn btn-warning text-white" type="submit" disabled>Sign Up</button>
                     </div>
                 </div>
             </form>

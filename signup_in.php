@@ -29,7 +29,7 @@ require_once("header.php");
                         <button name="action" value="login" class="btn btn-warning w-100 text-white">Sign In</button>
                     </div>
                     <div class="text-right">
-                        <a href="#">forgot your password?</a>
+                        <a href="/sorry.php">forgot your password?</a>
                     </div>
                 </div>
             </form>

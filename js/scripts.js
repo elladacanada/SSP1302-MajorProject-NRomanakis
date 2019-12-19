@@ -12,4 +12,10 @@
             
     });
 
+    $("#goBack").on("click", function(){
+        window.history.back();
+    })
+    
+
+
 })(jQuery);

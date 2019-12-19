@@ -78,7 +78,7 @@ require_once("conn.php");
         endif;
         ?>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+          <a class="nav-link" href="/sorry.php"><i class="fas fa-shopping-cart"></i></a>
         </li>
         
 

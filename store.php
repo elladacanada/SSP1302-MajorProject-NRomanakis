@@ -236,7 +236,7 @@ require_once("header.php");
 
                                 <div class="col-lg-4 col-sm-6 mb-3">
                                     
-                                        <a href="/item.php?watch_id=<?=$watch_row["id"]?>">
+                                        <a href="/item.php?watch_id=<?=$watch_row["id"]?>" target="_blank">
                                             <div class="store-card">
                                                 <div class="store-card-image">
                                                     <img src="<?php echo $watch_row['watch_pic']; ?>"  alt="...">
@@ -312,7 +312,7 @@ require_once("header.php");
                 <div class="input-group outline-dark">
                     <input class="form-control bg-light" type="search" placeholder="Enter Your Email Address Here" aria-label="Search">
                     <div class="input-group-append">
-                        <button class=" btn btn-warning text-white" type="submit">Search</button>
+                        <button class=" btn btn-warning text-white" type="submit" disabled>Sign Up</button>
                     </div>
                 </div>
             </form>
