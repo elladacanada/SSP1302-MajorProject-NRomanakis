@@ -10773,16 +10773,18 @@ footer ul li {
   }
   #storePage #mobileFilterButton {
     display: block;
+    padding: 5px 25px;
   }
   #storePage #filterRow {
     background: lightgray;
     padding: 20px;
     display: none;
   }
-  #storePage .show {
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
-    display: flex !important;
+}
+
+@media all and (min-width: 768px) {
+  #storePage #filterRow {
+    display: block !important;
   }
 }
 /*# sourceMappingURL=styles.css.map */

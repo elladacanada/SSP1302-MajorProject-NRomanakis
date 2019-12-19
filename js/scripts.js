@@ -7,7 +7,7 @@
     $("#mobileFilterButton").on("click",function(e){
         e.preventDefault();
         setTimeout( function(){
-            $("#filterRow").toggleClass("show");
+            $("#filterRow").slideToggle(300);
         }, 300);
             
     });

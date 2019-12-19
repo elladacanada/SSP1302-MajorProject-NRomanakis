@@ -5,6 +5,8 @@
 require_once($_SERVER["DOCUMENT_ROOT"] . "/conn.php");
 
 $errors = [];
+$success = [];
+
 
 if( isset($_POST["action"]) && $_POST["action"] == "login") : //login button on index page has action name of login.
     //get the users email and password

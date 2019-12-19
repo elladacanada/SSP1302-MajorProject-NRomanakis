@@ -2,14 +2,14 @@
 
 
 
-<footer class="bg-dark w-100">
+<footer class="bg-dark w-100 px-5">
 
   <div class="row d-flex align-items-center">
     <div class="col-md-6">
-      <a class="ml-5 navbar-brand" href="/index.php">Crowns & Jewels</a>
+      <a class=" navbar-brand" href="/index.php">Crowns & Jewels</a>
     </div>
     <div class="col-md-6">
-      <ul class="mr-5 ">
+      <ul>
         <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
         <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a></li>
         <li><a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>

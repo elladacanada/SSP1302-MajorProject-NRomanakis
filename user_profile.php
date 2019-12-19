@@ -16,10 +16,13 @@ if( $user_request = mysqli_query($conn, $user_query)) :
 
             <div class="container my-5">
                 <div class="row">
-                    <div class="col-md-8 offset-md-2 text-center">
+                    <div class="col-12">
                     <?php
-                    include_once($_SERVER["DOCUMENT_ROOT"] . "/includes/error_check.php");
+                        include_once($_SERVER["DOCUMENT_ROOT"] . "/includes/error_check.php");
                     ?>
+                    </div>
+                    <div class="col-md-12  text-center">
+                        
                         <h1><?php echo $user_row["first_name"] . " " . $user_row["last_name"];?></h1>
                         <p>
                             <?=$user_row["address"];?><br>

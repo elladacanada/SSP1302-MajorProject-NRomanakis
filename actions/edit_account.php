@@ -2,6 +2,7 @@
     require_once($_SERVER["DOCUMENT_ROOT"] . "/conn.php");
 
     $errors = [];
+    $success = [];
     // print_r($_POST);
     //UPDATE USER
 
@@ -34,10 +35,12 @@ if( isset($_POST["action"]) && $_POST["action"] == "update" ) :
                                 WHERE   id =  $user_id ";
 
             if( mysqli_query($conn, $update_query) ){
-                header("Location: " . strtok($_SERVER["HTTP_REFERER"], "?") . "?user_id=" . $user_id . "&success=User+Updated");
+                $success[] = "User Update Successful!";
+                $query = http_build_query( array("success" => $success) );
+                header("Location: " . strtok($_SERVER["HTTP_REFERER"], "?") . "?user_id=" . $user_id . "&" . $query);
             } else {
                 $errors[] = mysqli_error($conn);
-                print_r($errors);
+                // print_r($errors);
             }
         }
     } else {
@@ -84,16 +87,28 @@ elseif( isset($_POST["action"]) && $_POST["action"] == "change_password") :
 
             $update_query = "UPDATE users SET password = '$new_password' WHERE id = $user_id";
             if(mysqli_query($conn, $update_query)){
-                header("Location: http://" . $_SERVER["SERVER_NAME"] . "/user_profile.php?success=Password+Reset");
+                $success[] = "Password Changed Successfully!";
+                $query = http_build_query( array("success" => $success) );
+                header("Location: http://" . $_SERVER["SERVER_NAME"] . "/user_profile.php?success=Password+Reset" . "&" . $query);
             } else {
                 $errors[] = "Something Went Wrong: " . mysqli_error($conn);
+                
             }
         } else {
-            $errors[] = "New Passwords Do Not Match";
+            $errors[] = "New Passwords Do Not Match" . mysqli_error($conn);
+            
         }
     } else {
         $errors[] = "Current Password Is Incorrect! " . mysqli_error($conn);
     }
 
 endif;
+
+if( !empty($errors) ) {
+    $query = http_build_query( array("errors" => $errors) );
+    header("Location: " . strtok($_SERVER["HTTP_REFERER"], "?") . "?" . $query); //referer brings you to referring page.  this reloads your page entirely. strtok and the question mark will strip away everything in url after question mark.??  not sure?
+
+
+
+}
 ?>

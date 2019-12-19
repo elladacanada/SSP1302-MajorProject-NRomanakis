@@ -14,7 +14,6 @@ if( !isset($_SESSION["user_id"]) && ($_SESSION["role"] != 1)){
 
         <?php
         include_once($_SERVER["DOCUMENT_ROOT"] . "/includes/error_check.php");
-        
         ?>
 
 

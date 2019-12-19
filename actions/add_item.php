@@ -2,6 +2,7 @@
 require_once($_SERVER["DOCUMENT_ROOT"] . "/conn.php");
 
 $errors = [];
+$success = [];
 // echo "<pre>";
 // print_r($_POST);
 // print_r($_FILES);
@@ -65,10 +66,11 @@ if( isset($_SESSION["user_id"]) && ($_SESSION["role"] == 1)):
 
         
         }else {
+            $errors[] = "Don't forget an image!";
             $watch_pic_id = 'NULL';
         }
         
-        if($brand_id != "" && $price != "" && $model_name != ""){
+        if($brand_id != "" && $price != "" && $model_name != "" && $watch_pic_id != "NULL"){
 
             $insert_query =     "INSERT INTO watch
                                 (price, brand_id, description, model_name, watch_pic_id)
@@ -84,7 +86,8 @@ if( isset($_SESSION["user_id"]) && ($_SESSION["role"] == 1)):
             }
         
         } else {
-            $error[] = "Please Fill In All Fields.";
+            $errors[] = "Please Fill In All Fields.";
+            
         }
     endif;  
 

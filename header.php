@@ -23,7 +23,7 @@ require_once("conn.php");
   <body>
 
   <header>
-    <nav class="navbar navbar-expand-lg ">
+    <nav class="navbar navbar-expand-lg px-5">
     
     <a class="navbar-brand " href="http://<?php echo $_SERVER['SERVER_NAME'];?>">Crowns & Jewels</a>
     
@@ -85,7 +85,7 @@ require_once("conn.php");
       </ul>
       <form class="form-inline my-2 my-lg-0 ">
         
-          <input class="form-control bg-transparent text-white" name="search" type="search" placeholder="Search" value="<?php (isset($_GET["search"])) ? $_GET["search"] : ""; ?>">
+          <input class="form-control bg-transparent text-white" name="search" type="search" placeholder="Search" value="<?= (isset($_GET["search"]) ? $_GET["search"] : "") ?>">
           <div class="input-group-append">
             <button class=" btn btn-light text-warning my-2 my-sm-0" type="submit">Search</button>
           </div>

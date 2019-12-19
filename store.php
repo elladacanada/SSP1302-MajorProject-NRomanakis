@@ -2,7 +2,7 @@
 require_once("header.php");
 ?>
 
-<form id ="storePage" class="container mt-5">
+<form id ="storePage" class="container mt-5 ">
     <div class="row my-3 align-items-center">
         <div class="col-md-6 offset-md-3 col-sm-12">
             <h1>
@@ -15,10 +15,10 @@ require_once("header.php");
             ?>
             </h1>
         </div>
-        <div class="col-md-3 col-sm-12 p-0 ">
+        <div class="col-md-3 col-sm-12 ">
             <div class="row ">
                 <div class="col-6">
-                    <button id="mobileFilterButton">Filter</button>
+                    <button class="btn btn-primary text-white" id="mobileFilterButton">Filter</button>
                 </div>
                 <div class="col-6 d-flex justify-content-end ">
                     <select name="sort_by" id="sort_by"> 
@@ -29,79 +29,78 @@ require_once("header.php");
             </div>
         </div>
     </div>
-    <div class="row m-0">
+    <div class="row ">
         <div class="col-md-3 p-0">
-        <div id="filterTitle" class="col-md-12">
+            <div id="filterTitle" class="col-md-12">
+                
+                    <h2 class="font-weight-bold mb-3">Filter</h2>
+                    <a  href="/store.php">View All Items</a>
+            </div> 
             
-                <h2 class="font-weight-bold mb-3">Filter</h2>
-                <a  href="/store.php">View All Items</a>
-         </div> 
-         
-        <div id="filterRow" class="row my-3 m-0">
-        <div  class="col-md-12 col-sm-4">
-            <div class="form-group">
-                <h3>Price</h3>
-                    <div class="input-group">
-                        <input class="form-check-input" type="checkbox" id="gridCheck" name="pricerange[]" value="range1" <?=(isset($_GET["pricerange"]) && in_array("range1", $_GET["pricerange"]))?"checked":"";?>>
-                        <label class="form-check-label" for="gridCheck">$1000-$2000</label>
+            <div id="filterRow" class=" my-3 mx-0">
+                <div class="row p-3">
+                    <div  class="col-md-12 col-6">
+                        <div class="form-group">
+                            <h3>Price</h3>
+                            <div class="input-group">
+                                <input class="form-check-input" type="checkbox" id="gridCheck" name="pricerange[]" value="range1" <?=(isset($_GET["pricerange"]) && in_array("range1", $_GET["pricerange"]))?"checked":"";?>>
+                                <label class="form-check-label" for="gridCheck">$1000-$2000</label>
+                            </div>
+                            <div class="input-group">
+                                <input class="form-check-input" type="checkbox" id="gridCheck" name="pricerange[]" value="range2" <?=(isset($_GET["pricerange"]) && in_array("range2", $_GET["pricerange"]))?"checked":"";?>>
+                                <label class="form-check-label" for="gridCheck">$2000-$3000</label>
+                            </div>
+                            <div class="input-group">
+                                <input class="form-check-input" type="checkbox" id="gridCheck" name="pricerange[]" value="range3" <?=(isset($_GET["pricerange"]) && in_array("range3", $_GET["pricerange"]))?"checked":"";?>>
+                                <label class="form-check-label" for="gridCheck">$3000-$4000</label>
+                            </div>
+                            <div class="input-group">
+                                <input class="form-check-input" type="checkbox" id="gridCheck" name="pricerange[]" value="range4" <?=(isset($_GET["pricerange"]) && in_array("range4", $_GET["pricerange"]))?"checked":"";?>>
+                                <label class="form-check-label" for="gridCheck">$4000-$5000</label>
+                            </div>
+                            <div class="input-group">
+                                <input class="form-check-input" type="checkbox" id="gridCheck" name="pricerange[]" value="range5" <?=(isset($_GET["pricerange"]) && in_array("range5", $_GET["pricerange"]))?"checked":"";?>>
+                                <label class="form-check-label" for="gridCheck">$5000-$10000</label>
+                            </div>
+                            <div class="input-group">
+                                <input class="form-check-input" type="checkbox" id="gridCheck" name="pricerange[]" value="range6" <?=(isset($_GET["pricerange"]) && in_array("range6", $_GET["pricerange"]))?"checked":"";?>>
+                                <label class="form-check-label" for="gridCheck">$10000-$20000</label>
+                            </div>
+                            <div class="input-group">
+                                <input class="form-check-input" type="checkbox" id="gridCheck" name="pricerange[]" value="range7" <?=(isset($_GET["pricerange"]) && in_array("range7", $_GET["pricerange"]))?"checked":"";?>>
+                                <label class="form-check-label" for="gridCheck">$20000+</label>
+                            </div>
+                            
+                        </div>
                     </div>
-                    <div class="input-group">
-                        <input class="form-check-input" type="checkbox" id="gridCheck" name="pricerange[]" value="range2" <?=(isset($_GET["pricerange"]) && in_array("range2", $_GET["pricerange"]))?"checked":"";?>>
-                        <label class="form-check-label" for="gridCheck">$2000-$3000</label>
+                    <div class="col-md-12 col-6">
+                        <div class="form-group">
+                            <h3>Brand</h3>
+                            <?php
+                            $brand_query = " SELECT * FROM watch_brand";
+                            if ($brand_result = mysqli_query($conn, $brand_query)){
+                                while ($brand_row = mysqli_fetch_array($brand_result)){
+                            ?>
+                                <div class="input-group">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck" name="brand[]" value="<?=$brand_row["id"]?>"<?=(isset($_GET["brand"]) && in_array($brand_row["id"], $_GET["brand"]))?"checked":"";?>>
+                                    <label class="form-check-label" for="gridCheck"><?=$brand_row["brand_name"]?></label>
+                                </div>
+                            <?php
+                                }
+                            }
+                            ?>
+                            
+                        </div>
                     </div>
-                    <div class="input-group">
-                        <input class="form-check-input" type="checkbox" id="gridCheck" name="pricerange[]" value="range3" <?=(isset($_GET["pricerange"]) && in_array("range3", $_GET["pricerange"]))?"checked":"";?>>
-                        <label class="form-check-label" for="gridCheck">$3000-$4000</label>
-                    </div>
-                    <div class="input-group">
-                        <input class="form-check-input" type="checkbox" id="gridCheck" name="pricerange[]" value="range4" <?=(isset($_GET["pricerange"]) && in_array("range4", $_GET["pricerange"]))?"checked":"";?>>
-                        <label class="form-check-label" for="gridCheck">$4000-$5000</label>
-                    </div>
-                    <div class="input-group">
-                        <input class="form-check-input" type="checkbox" id="gridCheck" name="pricerange[]" value="range5" <?=(isset($_GET["pricerange"]) && in_array("range5", $_GET["pricerange"]))?"checked":"";?>>
-                        <label class="form-check-label" for="gridCheck">$5000-$10000</label>
-                    </div>
-                    <div class="input-group">
-                        <input class="form-check-input" type="checkbox" id="gridCheck" name="pricerange[]" value="range6" <?=(isset($_GET["pricerange"]) && in_array("range6", $_GET["pricerange"]))?"checked":"";?>>
-                        <label class="form-check-label" for="gridCheck">$10000-$20000</label>
-                    </div>
-                    <div class="input-group">
-                        <input class="form-check-input" type="checkbox" id="gridCheck" name="pricerange[]" value="range7" <?=(isset($_GET["pricerange"]) && in_array("range7", $_GET["pricerange"]))?"checked":"";?>>
-                        <label class="form-check-label" for="gridCheck">$20000+</label>
+                
+                    <div class=" col-sm-12">
+                        <hr>
+                        <button class="btn btn-primary text-white" type="submit">Apply Filter</button>
                     </div>
                     
+                </div>
             </div>
-            </div>
-            <div class="col-md-12 col-sm-4">
-            <div class="form-group">
-                <h3>Brand</h3>
-                <?php
-                $brand_query = " SELECT * FROM watch_brand";
-                if ($brand_result = mysqli_query($conn, $brand_query)){
-                    while ($brand_row = mysqli_fetch_array($brand_result)){
-                ?>
-                    <div class="input-group">
-                        <input class="form-check-input" type="checkbox" id="gridCheck" name="brand[]" value="<?=$brand_row["id"]?>"<?=(isset($_GET["brand"]) && in_array("range7", $_GET["brand"]))?"checked":"";?>>
-                        <label class="form-check-label" for="gridCheck"><?=$brand_row["brand_name"]?></label>
-                    </div>
-                <?php
-                    }
-                }
-                ?>
-                
-            </div>
-            </div>
-            <div class="col-md-12 col-sm-4">
-                <button type="submit">Apply Filter</button>
-            
-            </div>
-
-            
-            
-            
         </div>
-        </div>
-
 
         <div id="storeCards" class="col-md-9 p-0">
                     
@@ -138,6 +137,17 @@ require_once("header.php");
                                 $watch_where_search .= " WHERE watch.model_name IS NOT NULL ";
                             }
 
+                            if(isset($_GET["brand"])){
+                                $brands = $_GET["brand"];
+                                $watch_where_search .= " AND (";
+                                $i = 0;
+                                foreach($brands as $brand_id){
+                                    if($i > 0) $watch_where_search .= " OR";
+                                    $i++;
+                                    $watch_where_search .= " watch.brand_id = $brand_id";
+                                }
+                                $watch_where_search .=  ")";
+                            }
                             //if(isset($_GET[""]))
 
                             if(isset($_GET["pricerange"])) {
@@ -222,7 +232,7 @@ require_once("header.php");
                                 echo "<div class='row'>";// row div start
 
                                 while($watch_row = mysqli_fetch_array($watch_result)) {
-                        ?>
+                            ?>
 
                                 <div class="col-lg-4 col-sm-6 mb-3">
                                     
